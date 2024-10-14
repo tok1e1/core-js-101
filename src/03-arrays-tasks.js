@@ -265,8 +265,7 @@ function getSecondItems(arr) {
  */
 function propagateItemsByPositionIndex(arr) {
   return arr.reduce(
-    (result, item, index) => result.concat(Array(index + 1).fill(item)),
-    [],
+    (result, item, index) => result.concat(Array(index + 1).fill(item)), [],
   );
 }
 
@@ -284,7 +283,9 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  return arr.toSorted((a, b) => b - a).slice(0, 3);
+  return arr
+    .sort((a, b) => b - a)
+    .slice(0, 3);
 }
 
 /**
